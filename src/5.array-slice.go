@@ -40,4 +40,26 @@ func main() {
 
 	fmt.Println("arraySlice ==>>", arraySlice)
 	fmt.Println("arraySlice2 ==>>", arraySlice2)
+
+	b := arraySlice[:]
+	c := arraySlice[3:]
+	d := arraySlice[:5]
+	e := arraySlice[3:5]
+
+	fmt.Println("=======Slice======")
+
+	fmt.Printf("a %v %v %v\n", arraySlice, len(arraySlice), cap(arraySlice))
+	fmt.Printf("b %v %v %v\n", b, len(b), cap(b))
+	fmt.Printf("c %v %v %v\n", c, len(c), cap(c))
+	fmt.Printf("d %v %v %v\n", d, len(d), cap(d))
+	fmt.Printf("e %v %v %v\n", e, len(e), cap(e))
+
+	// Slice with make
+	sliceMake := make([]int, 0)
+	fmt.Printf("sliceMake ===> %v %v %v\n", sliceMake, len(sliceMake), cap(sliceMake))
+
+	sliceMake = append(sliceMake, 1)
+	sliceMake = append(sliceMake, 1, 2, 3, 4, 5, 6)
+	sliceMake = append(sliceMake, 1, 2, 3, 4, 5, 6)
+	fmt.Printf("sliceMake ===> %v %v %v\n", sliceMake, len(sliceMake), cap(sliceMake))
 }
